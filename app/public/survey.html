@@ -23,7 +23,7 @@
           <h2 class="text-center">Take our survey now to see if you match with any of our members!</h2>
           <br>
               <div class="text-center">
-            <a href="/home"><button class="btn btn-lg btn-primary"><span class="fa fa-list-alt"></span> Go Home</button></a>
+            <a href="/"><button class="btn btn-lg btn-primary"><span class="fa fa-list-alt"></span> Go Home</button></a>
           </div>
         </div>
     <div class="row">
@@ -166,7 +166,7 @@
                   <img id="profileImg" src="#">
                 </div>
                 <div class="modal-footer">
-                  <button id="submit" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
               </div>
             </div>
@@ -188,16 +188,29 @@
 
 
 <script type="text/javascript">
-     $("#submit").on("click", function(event) {
+     $(".submit").on("click", function(event) {
       event.preventDefault();
 
       var newMember = {
         memberName: $("#name").val().trim(),
         memberPhoto: $("#profilePhoto").val().trim(),
-        answers: [$("#question1").val(), $("#question2").val(), $("#question3").val(), $("#question4").val(), $("#question5").val(), $("#question6").val(), $("#question7").val(), $("#question8").val(), $("#question9").val(), $("#question10").val()]
+        answers: [$("#question1").val().trim(), $("#question2").val().trim(), $("#question3").val().trim(), $("#question4").val().trim(), $("#question5").val().trim(), $("#question6").val().trim(), $("#question7").val().trim(), $("#question8").val().trim(), $("#question9").val().trim(), $("#question10").val().trim()]
       };
   
       console.log(newMember);
+
+      $.post("/api/friends", newMember,
+      function(data) {
+
+        if (data) {
+          alert("You have been officially added!");
+        }
+        else {
+          alert("Please fill out all fields");
+        }
+
+        
+      });
   
     });
   </script>
