@@ -192,9 +192,9 @@
       event.preventDefault();
 
       var newMember = {
-        memberName: $("#name").val().trim(),
-        memberPhoto: $("#profilePhoto").val().trim(),
-        answers: [$("#question1").val().trim(), $("#question2").val().trim(), $("#question3").val().trim(), $("#question4").val().trim(), $("#question5").val().trim(), $("#question6").val().trim(), $("#question7").val().trim(), $("#question8").val().trim(), $("#question9").val().trim(), $("#question10").val().trim()]
+        name: $("#name").val().trim(),
+        photo: $("#profilePhoto").val().trim(),
+        scores: [$("#question1").val().trim(), $("#question2").val().trim(), $("#question3").val().trim(), $("#question4").val().trim(), $("#question5").val().trim(), $("#question6").val().trim(), $("#question7").val().trim(), $("#question8").val().trim(), $("#question9").val().trim(), $("#question10").val().trim()]
       };
   
       console.log(newMember);
@@ -209,7 +209,7 @@
           alert("Please fill out all fields");
         }
 
-        
+
       });
   
     });
