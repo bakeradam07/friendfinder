@@ -166,7 +166,7 @@
                   <img id="profileImg" src="#">
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button id="submit" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
               </div>
             </div>
@@ -188,7 +188,7 @@
 
 
 <script type="text/javascript">
-     $(".submit").on("click", function(event) {
+     $("#submit").on("click", function(event) {
       event.preventDefault();
 
       var newMember = {
